@@ -15,6 +15,7 @@ def encode_image(image):
     return base64.b64encode(image.read()).decode('utf-8')
 st.info('This is part of AI Forensics at Cambridge Digital Humanities', icon="ℹ️")
 st.title('Is this image AI generated?')
+st.text("Images and response text may take time to load")
 image_file = st.file_uploader('Upload an image to test',type = ['png', 'jpg', 'jpeg'])
 if image_file:
     width = 300
