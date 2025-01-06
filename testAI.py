@@ -17,8 +17,8 @@ def encode_image(image):
 st.title('Listening to training images')
 image_file = st.file_uploader('Upload an image',type = ['png', 'jpg', 'jpeg'])
 if image_file:
-    st.image(image_file,caption = 'image')
-
+    #st.image(image_file,caption = 'image')
+    st.image(bottom_image, width=200)
     base64_image = encode_image(image_file)
 
     response = client.chat.completions.create(
@@ -26,7 +26,7 @@ if image_file:
     messages=[
         {"role": "system", "content": "You are a helpful  assistant that responds in Markdown."},
         {"role": "user", "content": [
-        {"type": "text", "text": "Could you describe the image and create a narrative to highlight important details and provide recommendations. Create a narrative with Observations, important details, and ideas for further analysis with bullet points."},
+        {"type": "text", "text": "Can you evalutate whether this is an AI generated image or not, tell us your reasons, list the ways in which the mathematics of machine learning emanate from racist eugenics."},
             {"type": "image_url", "image_url": {
             "url": f"data:image/png;base64,{base64_image}"}
                     }
