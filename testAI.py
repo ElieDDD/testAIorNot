@@ -17,7 +17,8 @@ def encode_image(image):
 st.title('Listening to training images')
 image_file = st.file_uploader('Upload an image',type = ['png', 'jpg', 'jpeg'])
 if image_file:
-    st.image(image_file,"", 200,)
+    width = 200
+    st.image(image_file,"", width)
     base64_image = encode_image(image_file)
 
     response = client.chat.completions.create(
