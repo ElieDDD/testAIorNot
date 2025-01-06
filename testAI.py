@@ -14,10 +14,10 @@ client = OpenAI(api_key = key)
 def encode_image(image):
     return base64.b64encode(image.read()).decode('utf-8')
 
-st.title('Listening to training images')
-image_file = st.file_uploader('Upload an image',type = ['png', 'jpg', 'jpeg'])
+st.title('Is this image AI generated?')
+image_file = st.file_uploader('Upload an image to test',type = ['png', 'jpg', 'jpeg'])
 if image_file:
-    width = 200
+    width = 300
     st.image(image_file,"", width)
     base64_image = encode_image(image_file)
 
@@ -26,7 +26,7 @@ if image_file:
     messages=[
         {"role": "system", "content": "You are a helpful  assistant that responds in Markdown."},
         {"role": "user", "content": [
-        {"type": "text", "text": "Can you evalutate whether this is an AI generated image or not, tell us your reasons, list the ways in which the mathematics of machine learning emanate from racist eugenics."},
+        {"type": "text", "text": "Can you evalutate whether this is an AI generated image or not, tell us your reasons, list the ways in which the mathematics of machine learning emanate from racist eugenics. Tell us how owners of AI companies are entangled with racist politics"},
             {"type": "image_url", "image_url": {
             "url": f"data:image/png;base64,{base64_image}"}
                     }
