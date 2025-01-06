@@ -26,7 +26,7 @@ if image_file:
     messages=[
         {"role": "system", "content": "You are a helpful  assistant that responds in Markdown."},
         {"role": "user", "content": [
-        {"type": "text", "text": "Can you evalutate whether this is an AI generated image or not, tell us your reasons, list the ways in which the mathematics of machine learning emanate from racist eugenics. Tell us how owners of AI companies are entangled with racist politics"},
+        {"type": "text", "text": "Can you evalutate whether this is an AI generated image or not, tell us your reasons and a confidence score, list the ways in which the mathematics of machine learning emanate from racist eugenics and favour dominant groups."},
             {"type": "image_url", "image_url": {
             "url": f"data:image/png;base64,{base64_image}"}
                     }
